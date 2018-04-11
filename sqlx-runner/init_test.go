@@ -9,9 +9,9 @@ import (
 
 	logxi "github.com/mgutz/logxi/v1"
 
-	"github.com/Janulka/dat"
-	"github.com/Janulka/dat/kvs"
-	"github.com/Janulka/dat/postgres"
+	"github.com/ilk/dat"
+	"github.com/ilk/dat/kvs"
+	"github.com/ilk/dat/postgres"
 )
 
 var testDB *DB

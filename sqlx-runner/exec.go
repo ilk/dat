@@ -6,16 +6,17 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
 	"reflect"
 	"strconv"
 	"strings"
 	"time"
 
+	"github.com/ilk/dat"
+	"github.com/ilk/dat/kvs"
 	"github.com/jmoiron/sqlx"
 	"github.com/lib/pq"
 	guid "github.com/satori/go.uuid"
-	"github.com/Janulka/dat"
-	"github.com/Janulka/dat/kvs"
 )
 
 // database is the interface for sqlx's DB or Tx against which
@@ -718,5 +719,9 @@ func (ex *Execer) queryObject(dest interface{}) error {
 
 // uuid generates a UUID.
 func uuid() string {
-	return fmt.Sprintf("%s", guid.NewV4())
+	uuid, err := guid.NewV4()
+	if err != nil {
+		log.Fatal(err)
+	}
+	return uuid.String()
 }

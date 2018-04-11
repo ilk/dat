@@ -3,7 +3,7 @@ package dat
 import (
 	"time"
 
-	"github.com/Janulka/dat/common"
+	"github.com/ilk/dat/common"
 )
 
 // Dialect is the active SQLDialect.
